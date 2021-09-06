@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+
+<body>
+  <div id="btmmenu">
+    <i class="ri-close-line"></i>
+    <div id="left">
+    </div>
+    <div id="right">
+      <button>
+        <h3>₹ <span> 320</span></h3>
+        <h3>Place Order</h3>
+      </button>
+    </div>
+  </div>
+  <div id="card">
+    <form >
+      <i class="ri-close-line"></i>
+      <input type="number" name="number" placeholder="Enter your number" >
+      <textarea name="address" placeholder="Enter your address"></textarea>
+      <input type="submit" value="Place Your Order">
+    </form>
+  </div>
+  <div id="main">
+    <div id="heading">
+      <h1>Cheems <span>Food</span></h1>
+      <span id="badge">super faaaast</span>
+    </div>
+    <h1>Search Food Options</h1>
+    <input type="text" placeholder="Masala Pav, Full Meal, French Fries, ... ">
+    <div id="items">
+      <% products.forEach(function(data){ %>
+        <div class="item">
+          <div class="imgsection">
+            <div class="img">
+              <img src=<%=data.image %>
+              alt="">
+            </div>
+            <div class="imgchild">
+              <img src=<%=data.image %>
+              alt="">
+            </div>
+          </div>
+          <h3>
+            <%= data.name %>
+          </h3>
+          <h5>
+            <%= data.description %>
+          </h5>
+          <h1>₹ <%= data.price %>
+          </h1>
+            <i data-product=<%= data.name.split(' ').join('-') %> class="ri-add-line" ></i>     
+        </div>
+        <% }) %>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../javascripts/scripts.js"></script>
+</body>
+
+</html>
